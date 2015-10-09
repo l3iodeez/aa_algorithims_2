@@ -40,7 +40,12 @@ class HashMap
     bucket(key).remove(key)
   end
 
-  def each
+  def each(&blk)
+    @store.each do |bucket|
+      bucket.each do |link|
+        blk.call(link)
+      end
+    end
   end
 
   # uncomment when you have Enumerable included
