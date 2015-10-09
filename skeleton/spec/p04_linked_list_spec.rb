@@ -40,7 +40,12 @@ describe LinkedList do
     end
   end
 
+
+
   describe "#each" do
+
+
+
     it "enumerates over the links" do
       i = 0
       vals = (1..3).to_a

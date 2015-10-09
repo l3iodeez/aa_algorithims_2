@@ -73,9 +73,6 @@ class ResizingIntSet
       self[num] << num
       @count += 1
     end
-
-
-
   end
 
   def remove(num)
