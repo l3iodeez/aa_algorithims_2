@@ -13,7 +13,8 @@ class HashMap
 
   def include?(key)
     bucket(key).each do |link|
-      return true if link.key == key
+
+      return true if !link.nil? && link.key == key
     end
 
   end

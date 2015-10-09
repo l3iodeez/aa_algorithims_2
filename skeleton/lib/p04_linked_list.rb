@@ -26,7 +26,7 @@ class LinkedList
   end
 
   def first
-    head.value
+    head
   end
 
   def last
@@ -82,7 +82,7 @@ class LinkedList
 
   def remove(key)
     current_pos = @head
-    @head = @head.next if @head.key == key
+    @head = @head.next if !@head.nil? && @head.key == key
     until current_pos.next.nil?
       if current_pos.next.key == key
         current_pos.next = current_pos.next.next
@@ -100,6 +100,7 @@ class LinkedList
     current_pos = @head
 
     loop do
+      break if current_pos.nil?
       blk.call(current_pos)
       break if current_pos.next.nil?
       current_pos = current_pos.next
